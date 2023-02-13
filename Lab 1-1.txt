@@ -1,0 +1,54 @@
+using System;
+
+namespace Project2
+{
+  internal class Дз_1_1
+  {
+    static void Main(string [] args)
+    {
+      Console.WriteLine("Введите a");
+      double a = double.Parse(Console.ReadLine());
+
+      if (a == 0)
+      {
+        Console.WriteLine("Конечный результат равен 0");
+        Environment.Exit(0);
+      }
+
+      Console.WriteLine("Введите n");
+      int n = int.Parse(Console.ReadLine());
+
+      if (a == 1 || n == 0)
+      {
+        Console.WriteLine("Конечный результат равен 1");
+        Environment.Exit(0);
+      }
+
+      int secondN;
+
+      if (n < 0) 
+      {
+        double firstValueOfA = 1 / a;
+        secondN = -1;
+        a = 1 / a;
+        while (secondN != n)
+        {
+          a = a * firstValueOfA;
+          --secondN;
+        }
+      }
+
+      else
+      {
+        double firstValueOfA = a;
+        secondN = 1;
+        while (secondN != n)
+        {
+          a = a * firstValueOfA;
+          ++secondN;
+        }
+      }
+      Console.WriteLine("Конечный результат равен " + a);
+    }
+  }
+}

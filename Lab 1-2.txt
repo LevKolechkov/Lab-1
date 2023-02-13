@@ -1,0 +1,49 @@
+using System;
+
+namespace Project2
+{
+  internal class Дз_1_2
+  {
+    static void Main(string[] args)
+    {
+
+      Console.WriteLine("Введите число x");
+      string wordX = Console.ReadLine();
+
+      char firstNumberOfX = wordX[0];
+      char secondNumberOfX = wordX[1];
+
+      int ArrayLengthX = wordX.Length;
+
+      char[] arrayWordX = new char[ArrayLengthX + 1];
+
+      int rowIndex;
+      for (rowIndex = 0; rowIndex <= ArrayLengthX - 1; ++rowIndex)
+      {
+        arrayWordX[rowIndex] = wordX[rowIndex];
+      }
+
+      for (rowIndex = 0; rowIndex <= ArrayLengthX - 2; ++rowIndex)
+      {
+        arrayWordX[rowIndex] = arrayWordX[rowIndex + 1];
+      }
+
+      arrayWordX[0] = firstNumberOfX;
+      arrayWordX[ArrayLengthX - 1] = secondNumberOfX;
+
+      Console.Write("Число x:");
+      for (rowIndex = 0; rowIndex <= ArrayLengthX - 1; ++rowIndex)
+      {
+        Console.Write(wordX[rowIndex]);
+      }
+
+      Console.WriteLine(); //отступ
+
+      Console.Write("Число n:");
+      for (rowIndex = 0; rowIndex <= ArrayLengthX - 1; ++rowIndex)
+      {
+        Console.Write(arrayWordX[rowIndex]);
+      }
+    }
+  }
+}
