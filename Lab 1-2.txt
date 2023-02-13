@@ -13,39 +13,37 @@ namespace Project2
       char firstNumberOfX = wordX[0];
       char secondNumberOfX = wordX[1];
 
-      int lenOfArrayX = wordX.Length;
+      int ArrayLengthX = wordX.Length;
 
-      char[] arrayWordX = new char[lenOfArrayX + 1];
+      char[] arrayWordX = new char[ArrayLengthX + 1];
 
-      int row;
-      for (row = 0; row <= lenOfArrayX - 1; ++row)
+      int rowIndex;
+      for (rowIndex = 0; rowIndex <= ArrayLengthX - 1; ++rowIndex)
       {
-        arrayWordX[row] = wordX[row];
-
+        arrayWordX[rowIndex] = wordX[rowIndex];
       }
 
-      for (row = 0; row <= lenOfArrayX - 2; ++row)
+      for (rowIndex = 0; rowIndex <= ArrayLengthX - 2; ++rowIndex)
       {
-        arrayWordX[row] = arrayWordX[row + 1];
+        arrayWordX[rowIndex] = arrayWordX[rowIndex + 1];
       }
 
       arrayWordX[0] = firstNumberOfX;
-      arrayWordX[lenOfArrayX - 1] = secondNumberOfX;
+      arrayWordX[ArrayLengthX - 1] = secondNumberOfX;
 
       Console.Write("Число x:");
-      for (row = 0; row <= lenOfArrayX - 1; ++row)
+      for (rowIndex = 0; rowIndex <= ArrayLengthX - 1; ++rowIndex)
       {
-        Console.Write(wordX[row]);
+        Console.Write(wordX[rowIndex]);
       }
 
       Console.WriteLine(); //отступ
 
       Console.Write("Число n:");
-      for (row = 0; row <= lenOfArrayX - 1; ++row)
+      for (rowIndex = 0; rowIndex <= ArrayLengthX - 1; ++rowIndex)
       {
-        Console.Write(arrayWordX[row]);
+        Console.Write(arrayWordX[rowIndex]);
       }
     }
-    
   }
 }
